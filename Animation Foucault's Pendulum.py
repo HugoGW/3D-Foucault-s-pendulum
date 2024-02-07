@@ -25,7 +25,7 @@ def Eq_DP(y, t):
     d2θdt2 = 2 * Ω * np.sin(l) * np.sin(θ) * np.cos(θ) * dφdt - 2 * Ω * np.sin(φ) * np.sin(θ) ** 2 * np.cos(
         l) * dφdt - ω0 ** 2 * np.sin(θ) + np.sin(θ) * np.cos(θ) * dφdt ** 2
 
-    d2φdt2 = (-2 * Ω * np.sin(l) * np.sin(θ) * dθdt + 2 * Ω * np.sin(φ) * np.sin(θ) * np.cos(
+    d2φdt2 = (-2 * Ω * np.sin(l) * np.cos(θ) * dθdt + 2 * Ω * np.sin(φ) * np.sin(θ) * np.cos(
         l) * dθdt - 2 * np.cos(θ) * dθdt * dφdt) / np.sin(θ)
 
     return [dθdt, d2θdt2, dφdt, d2φdt2]
