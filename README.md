@@ -7,7 +7,7 @@ First, I took a pen and paper and I easily found the differential equations of m
 $$
     \begin{array}{ll}
         \ddot{\theta} = 2\Omega \sin(l) \sin(\theta) \cos(\theta) \dot{\phi} -2\Omega \sin(\phi) \sin(\theta)^2 \cos(l) \dot{\phi} -\omega_0^2 \sin(\theta) + \sin(\theta) \cos(\theta) \dot{\phi}^2  \\
-        \ddot{\phi} \sin(\theta) = -2 \Omega \sin(l) \sin(\theta) \dot{\theta} + 2 \Omega \sin(\phi) \sin(\theta) * np.cos(l) \dot{\theta} - 2 \cos(\theta) \dot{\theta} \dot{\phi}
+        \ddot{\phi} \sin(\theta) = -2 \Omega \sin(l) \sin(\theta) \dot{\theta} + 2 \Omega \sin(\phi) \sin(\theta)\cos(l) \dot{\theta} - 2 \cos(\theta) \dot{\theta} \dot{\phi}
     \end{array}
 $$
 
