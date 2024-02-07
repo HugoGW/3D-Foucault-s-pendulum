@@ -13,12 +13,9 @@ $$
 
 where : 
 
-
-\begin{array}{ll}
-        $\Omega = \frac{2\pi}{T}$ where T is the spinning time of Earth
-        $l$ is the lattitude
-        $\omega_0 = \frac{g}{L}$
-\end{array}
+    - $\Omega = \frac{2\pi}{T}$ where T is the spinning time of Earth
+    - $l$ is the lattitude
+    - $\omega_0 = \frac{g}{L}$
 
 
 Then, we choose our initial condition for our angles $\theta_1(t=0), \theta_2(t=0), \omega_1(t=0), \omega_2(t=0)$. 
