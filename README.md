@@ -11,7 +11,16 @@ $$
     \end{array}
 $$
 
-and we solve these ODEs with odeint from the scipy library. We repeat these process for N double pendulums and put all values in a matrix $\displaystyle [[\theta_1^1, \theta_2^1], [\theta_1^2, \theta_2^2], ..., [\theta_1^N, \theta_2^N]]$
+where : 
+
+$$
+\begin{itemize}
+    \item where:
+    \item $T$ is ...
+    \item $\alpha$ is ...
+    \item ...
+\end{itemize}
+$$
 
 Then, we choose our initial condition for our angles $\theta_1(t=0), \theta_2(t=0), \omega_1(t=0), \omega_2(t=0)$. 
 
