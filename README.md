@@ -17,19 +17,18 @@ where :
    - $l$ is the lattitude
    - $\omega_0 = \frac{g}{L}$
 
+From these ODEs, we determine our initial conditions for $\theta(t=0)$, $\phi(t=0)$, $\dot{\theta}(t=0)$ and $\dot{\phi}(t=0)$. Then, we solve these ODEs for $\theta$ and $\phi$ with the initial conditions with odeint from the scipy library.
 
-Then, we choose our initial condition for our angles $\theta_1(t=0), \theta_2(t=0), \omega_1(t=0), \omega_2(t=0)$. 
+    θ = solve_ODE(Eq_DP, initial_conditions, t_values, 0)
+    φ = solve_ODE(Eq_DP, initial_conditions, t_values, 2)
 
-In this code, I choose that my N double pendulums all have the same initial conditions except for $\displaystyle \theta_1^k(t=0) = \theta_1(t=0)\times k d\theta_1 ~~ \forall ~ k \in  {1,...,N}$.
-
-Once every couple of angle [\theta_1^k, \theta_2^k] solved, we determine the position of the masses of the double pendulum with polar coordinates (by taking into account that the zero angle starts at $-\pi /2$ on the unit circle because $\vec{g} ~~ // -\vec{e}_y$: 
+From the spherical coordinates $\theta$ and $\phi$ (and $r=L$), we exprime the dynmaic of the pendulum into cartesian coordinates $x,y,z$
 
 $$
     \begin{array}{ll}
-        x_1^k = L_1 \sin(\theta_1^k) \\
-        y_1^i = -L_1 \cos(\theta_1^k) \\
-        x_2^i = x_1^k + L_2 \sin(\theta_2^k) \\
-        y_2^i = y_1^k -L_2 \cos(\theta_2^k) \\
+        x = L \sin(\theta) \cos(\phi) \\
+        y = L \sin(\theta) \sin(\phi) \\
+        z = -L \cos(\theta) \\
     \end{array}
 $$
 
