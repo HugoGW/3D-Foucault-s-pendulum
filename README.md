@@ -22,7 +22,7 @@ From these ODEs, we determine our initial conditions for $\theta(t=0)$, $\phi(t=
     θ = solve_ODE(Eq_DP, initial_conditions, t_values, 0)
     φ = solve_ODE(Eq_DP, initial_conditions, t_values, 2)
 
-From the spherical coordinates $\theta$ and $\phi$ (and $r=L$), we exprime the dynmaic of the pendulum into cartesian coordinates $x,y,z$
+From the spherical coordinates $\theta$ and $\phi$ (and $r=L$), we express the dynamics of the pendulum into cartesian coordinates $x,y,z$
 
 $$
     \begin{array}{ll}
@@ -32,14 +32,36 @@ $$
     \end{array}
 $$
 
-Then, we animate our 2N angles in function of time by using FuncAnimation from the matplotlib.animation library.
+Then, we animate our pendulum in function of time by using FuncAnimation from the matplotlib.animation library.
 
-https://github.com/HugoGW/Simple-and-double-Pendulums/assets/140922475/858d2216-4e0f-45c1-a99a-05b943aec61f
+For the following simulation, I took :
 
-We could add dots to explicitly show the masses but I find it more elegant without them.
+        L = 0.3  # Length of pendulum (m)
+        g = 9.81  # Gravitational acceleration (m/s^2)
+        T = 40  # Seconds in a day
+        Ω = 2 * np.pi / T  # Pulsation of Earth's rotation
+        l = np.radians(45)  # Latitude of the pendulum
+        ω0 = np.sqrt(g / L)  # Pulsation of the pendulum
 
-We could also plot the behavior of the 2 angles in their respective phase spaces, which could be interesting.
-We could improve our model by considering friction.
+<img width="382" alt="image" src="https://github.com/HugoGW/3D-Foucault-s-pendulum/assets/140922475/fdfd8cbf-6733-4f20-a943-d05804a98e7e">
+
+<img width="389" alt="image" src="https://github.com/HugoGW/3D-Foucault-s-pendulum/assets/140922475/94fccadb-7284-48f1-89ec-851ccf0ca225">
+
+<img width="411" alt="image" src="https://github.com/HugoGW/3D-Foucault-s-pendulum/assets/140922475/971f1c71-be4e-416a-9d14-5cd83e737b91">
 
 
+PS : I don't know why, but I can't plot a rope for the pendulum between the origin $(0,0,0)$ and the mass $(x,y,z)$ so I plotted a hundred of little black dots between the origin and the mass that can be seen as a rope.
+Here's the previous line code that doesn't work
+
+    def animate(i):
+        n = 8
+    
+        rope_line.set_data([0, x[n * i]], [0, y[n * i]])
+        ax.plot([0, x[n*i]], [0, y[n*i]], [0, z[n*i]], color='black', linewidth=1)
+        rope_line.set_3d_properties([0, z[n * i]])
+    
+        trajectory_line.set_data(x[:n * i], y[:n * i])
+        trajectory_line.set_3d_properties(-1.1 * L)
+        pendulum_bob.set_data(x[n * i], y[n * i])
+        pendulum_bob.set_3d_properties(z[n * i])
 
