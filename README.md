@@ -33,6 +33,7 @@ $$
 $$
 
 Then, we animate our pendulum in function of time by using FuncAnimation from the matplotlib.animation library.
+The animation includes the dynamics of the pendulum and the path of the pendulum on the ground (in blue) to make the motion of the mass more visual.
 
 For the following simulation, I took :
 
@@ -49,6 +50,7 @@ For the following simulation, I took :
 
 <img width="411" alt="image" src="https://github.com/HugoGW/3D-Foucault-s-pendulum/assets/140922475/971f1c71-be4e-416a-9d14-5cd83e737b91">
 
+I could make my simulation more realistic by including a friction term that causes energy loss, decreasing the amplitude of the pendulum's motion.
 
 PS : I don't know why, but I can't plot a rope for the pendulum between the origin $(0,0,0)$ and the mass $(x,y,z)$ so I plotted a hundred of little black dots between the origin and the mass that can be seen as a rope.
 Here's the previous line code that doesn't work
